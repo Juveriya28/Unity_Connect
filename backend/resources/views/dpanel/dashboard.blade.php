@@ -2,6 +2,7 @@
 
 @section('title', 'Dashboard')
 
+
 @section('body_content')
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div class="bg-white rounded-md flex shadow-lg w-full overflow-hidden">
@@ -10,7 +11,7 @@
             </span>
             <div class="p-3">
                 <p class="font-medium">Total Category</p>
-                <small class="text-gray-400">{{ $total['category'] }}</small>
+                <small class="text-gray-400">{{$total['category']}}</small>
             </div>
         </div>
 
@@ -20,7 +21,7 @@
             </span>
             <div class="p-3">
                 <p class="font-medium">Total Campaign</p>
-                <small class="text-gray-400">{{ $total['campaign'] }}</small>
+                <small class="text-gray-400">{{$total['campaign'] }}</small>
             </div>
         </div>
         <div class="bg-white rounded-md flex shadow-lg w-full overflow-hidden">
@@ -29,7 +30,7 @@
             </span>
             <div class="p-3">
                 <p class="font-medium">Total Active Campaign</p>
-                <small class="text-gray-400">{{ $total['activeCampaign'] }}</small>
+                <small class="text-gray-400">{{$total['activeCampaign']}}</small>
             </div>
         </div>
         <div class="bg-white rounded-md flex shadow-lg w-full overflow-hidden">
@@ -44,6 +45,7 @@
 
     </div>
 
+   
 
     {{-- Table --}}
     <section class="mt-4">
@@ -69,31 +71,31 @@
                         Amount
                     </th>
                     <th scope="col" class="pl-3 py-2 text-left font-medium tracking-wider">
-                        Date
+                       Date
                     </th>
-
                 </tr>
             </x-slot:thead>
 
             <x-slot:tbody>
-                @foreach ($raiseFund as $item)
+                @foreach (range(1, 10) as $item)
                     <tr>
                         <td class="pl-3 py-2">
-                            {{ $raiseFund->perPage() * ($raiseFund->currentPage() - 1) + $loop->iteration }}
+                            {{ $loop->iteration }}
                         </td>
-                        <td class="pl-3 py-2">{{ $item->campaign->name }}</td>
-                        <td class="pl-3 py-2">{{ $item->name }}</td>
-                        <td class="pl-3 py-2">{{ $item->phone }}</td>
-                        <td class="pl-3 py-2">{{ $item->email }}</td>
-                        <td class="pl-3 py-2">{{ $item->amount }}</td>
-                        <td class="pl-3 py-2">{{ $item->created_at->format('d-m-Y') }}</td>
+                        <td class="pl-3 py-2">Vinay</td>
+                        <td class="pl-3 py-2">Rajput</td>
+                        <td class="pl-3 py-2">70079XXXXX</td>
+                        <td class="pl-3 py-2">vinay@dd4you.in</td>
+                        <td class="pl-3 py-2">01-01-2000</td>
+                        <td class="pl-3 py-2">HN, City, State, India, (Pincode)</td>
+                        
                     </tr>
                 @endforeach
 
             </x-slot:tbody>
 
             <x-slot:pagination>
-                {{ $raiseFund->links('dpanel.layouts.pagination') }}
+                {{-- Pagination --}}
             </x-slot:pagination>
         </x-dpanel::table>
     </section>

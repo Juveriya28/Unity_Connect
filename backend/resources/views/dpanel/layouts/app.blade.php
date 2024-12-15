@@ -32,17 +32,17 @@
 
     <x-dpanel::sidebar.container name="DD Admin">
 
-        <x-dpanel::sidebar.item name="Dashboard" icon="bx-home"
+        <x-dpanel::sidebar.item name="Dashboard" icon="bx-home" 
             url="{{ route(config('dpanel.prefix') . '.dashboard') }}"
             isActive="{{ request()->segment(2) == 'dashboard' }}" />
 
-
-
-        <x-dpanel::sidebar.item name="Categories" icon="bx-category-alt"
+       
+       
+        <x-dpanel::sidebar.item name="Categories" icon="bx-category-alt" 
             url="{{ route(config('dpanel.prefix') . '.category.index') }}"
             isActive="{{ request()->segment(2) == 'category' }}" />
 
-        <x-dpanel::sidebar.item name="Campaigns" icon="bx-donate-heart"
+        <x-dpanel::sidebar.item name="Campaigns" icon="bx-donate-heart" 
             url="{{ route(config('dpanel.prefix') . '.campaign.index') }}"
             isActive="{{ request()->segment(2) == 'campaign' }}" />
 

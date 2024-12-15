@@ -22,6 +22,7 @@
                     @endforeach
                 </select>
             </div>
+            
             <div class="md:col-span-3">
                 <label class="font-medium">Campaign Name</label>
                 <input type="text" name="name" placeholder="Enter Campaign Name" maxlength="150"
